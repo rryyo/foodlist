@@ -2,13 +2,15 @@
   <ul class="list-unstyled mt-2">
     <% items.each do |item| %>
       <li class="d-flex">
-        <img class="rounded me-2 mb-5" src="<%= gravatar_url(item.user, { size: 64 }) %>" alt="">
         <div>
           <div>
             <%= link_to item.user.name, user_path(item.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= item.created_at %></span>
           </div>
           <div>
-            <p><%= item.menu %></p>
+            <p>Menu: <%= item.menu %></p>
+            <p>Category: <%= item.category %></p>
+            <p>Comment: <%= item.comment %></p>
+            <p>Image: <%= item.image %></p>
           </div>
           <div>
             <% if current_user == item.user %>
