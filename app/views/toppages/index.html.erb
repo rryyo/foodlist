@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-sm-4">
-      <p>Categories</p>
+      <%= render 'layouts/categories' %>
     </aside>
     <div class="col-sm-8">
       <%= render 'items/items', items: @items %>

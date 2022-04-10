@@ -2,6 +2,7 @@
 <%= @item.category %>
 <%= @item.comment %>
 <%= @item.image %>
+<%= @item.created_at %>
 <% if current_user == @item.user %>
   <%= link_to "Delete", @item, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
 <% end %>
