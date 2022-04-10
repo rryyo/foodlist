@@ -7,7 +7,9 @@
             <%= link_to item.user.name, user_path(item.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= item.created_at %></span>
           </div>
           <div>
-            <p>Menu: <%= item.menu %></p>
+            <p>Menu: <%= link_to item.menu, item_path(item) %></p>
+          </div>
+          <div>
             <p>Category: <%= item.category %></p>
             <p>Comment: <%= item.comment %></p>
             <p>Image: <%= item.image %></p>

@@ -1,0 +1,23 @@
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3 mb-3">
+      <%= form_with(model: @item) do |f| %>
+        <div class="mb-3">
+          <%= f.label :menu, 'Menu' %>
+          <%= f.text_area :menu, class: 'form-control', rows: 1 %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :category, 'Category' %>
+          <%= f.select :category, [["japanese", "japanese"], ["western", "western"], ["chinese", "chinese"], ["others", "others"]], include_blank: "選択してください", class: 'form-control' %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :comment, 'Comment' %>
+          <%= f.text_area :comment, class: 'form-control' %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :image, 'Image' %>
+          <%= f.text_area :image, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Post', class: 'btn btn-primary w-100' %>
+      <% end %>
+    </div>
+  </div>

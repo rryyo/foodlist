@@ -1,0 +1,7 @@
+<%= @item.menu %>
+<%= @item.category %>
+<%= @item.comment %>
+<%= @item.image %>
+<% if current_user == @item.user %>
+  <%= link_to "Delete", @item, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+<% end %>
