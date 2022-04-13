@@ -1,8 +1,18 @@
 <%= @item.menu %>
 <%= @item.category %>
 <%= @item.comment %>
-<%= @item.image %>
 <%= @item.created_at %>
+
+<div class="card h-100">
+<p>
+<% if @item.image.present? %>
+  <%= image_tag @item.image.url %>
+<% else %>
+  <%= image_tag '/mark_batsu.png' %>
+<% end %>
+</p>
+</div>
+
 <% if current_user == @item.user %>
   <%= link_to "Delete", @item, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
 <% end %>

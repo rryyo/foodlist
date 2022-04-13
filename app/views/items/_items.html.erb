@@ -8,7 +8,13 @@
             <p>Menu: <%= link_to item.menu, item_path(item) %></p>
           </div>
           <div>
-            <p>Image: <%= item.image %></p>
+            <p>
+              <% if item.image.present? %>
+                <%= image_tag item.image.url %>
+              <% else %>
+                <%= image_tag '/mark_batsu.png' %>
+              <% end %>
+              </p>
           </div>
           <div>
             <% if current_user == item.user %>
