@@ -3,9 +3,9 @@
       <div class="col">
         <p>
         <% if @item.image.present? %>
-          <%= image_tag @item.image.url %>
+          <%= image_tag @item.image.url, width: '80%', height: '80%' %>
         <% else %>
-          <%= image_tag '/mark_batsu.png' %>
+          <%= image_tag '/mark_batsu.png', width: '10%', height: '10%' %>
         <% end %>
         </p>
 
