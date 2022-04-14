@@ -1,18 +1,38 @@
-<%= @item.menu %>
-<%= @item.category %>
-<%= @item.comment %>
-<%= @item.created_at %>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>
+        <% if @item.image.present? %>
+          <%= image_tag @item.image.url %>
+        <% else %>
+          <%= image_tag '/mark_batsu.png' %>
+        <% end %>
+        </p>
 
-<div class="card h-100">
-<p>
-<% if @item.image.present? %>
-  <%= image_tag @item.image.url %>
-<% else %>
-  <%= image_tag '/mark_batsu.png' %>
-<% end %>
-</p>
-</div>
+      </div>
+      <div class="col d-flex align-items-center">
+        <ul>
+          <li>
+            <%= @item.created_at %>
+          </li>
+          <li>
+            <%= @item.menu %>
+          </li>
+          <li>
+            <%= @item.category %>
+          </li>
+          <li>
+            <%= @item.user.name %>
+          </li>
+          <li>
+            <%= @item.comment %>
+          </li>
+        <% if current_user == @item.user %>
+          <%= link_to "Delete", @item, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+        <% end %>
+        </ul>
+    　 </div>
+  　 </div>
+  </div>
 
-<% if current_user == @item.user %>
-  <%= link_to "Delete", @item, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
-<% end %>
+
