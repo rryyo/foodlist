@@ -7,9 +7,9 @@
       </div>
       <div class="m-4">
         <% if item.image.present? %>
-          <%= image_tag item.image.url %>
+          <%= image_tag item.image.url, width: '50%', height: '50%'%>
         <% else %>
-          <%= image_tag '/mark_batsu.png' %>
+          <%= image_tag '/mark_batsu.png', width: '10%', height: '10%' %>
         <% end %>
         <div class="m-2">
         投稿者:<%= link_to item.user.name, user_path(item.user), class: "text-decoration-none" %>
