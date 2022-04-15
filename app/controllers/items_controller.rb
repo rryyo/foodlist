@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     flash[:success] = '削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
 
   private
