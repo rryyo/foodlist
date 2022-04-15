@@ -1,13 +1,13 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p>
+        <div>
         <% if @item.image.present? %>
-          <%= image_tag @item.image.url, width: '90%', height: '90%' %>
+          <%= image_tag @item.image.url, alt: @item.menu, class: "img-fluid" %>
         <% else %>
-          <%= image_tag '/mark_batsu.png', width: '10%', height: '10%' %>
+          <%= image_tag '/mark_batsu.png', alt: "画像がありません", class: "img-fluid" %>
         <% end %>
-        </p>
+        </div>
 
       </div>
       <div class="col d-flex align-items-center">
