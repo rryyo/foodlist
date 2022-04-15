@@ -5,11 +5,17 @@
       <div class="card-header">
         Menu: <%= link_to item.menu, item_path(item) %>
       </div>
-      <div class="m-4">
+      <div class="container m-2">
         <% if item.image.present? %>
-          <%= image_tag item.image.url, width: '50%', height: '50%' %>
+        <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+          <%= image_tag item.image.url, alt: item.menu, class: "img-fluid" %>
+        </div>
         <% else %>
-          <%= image_tag '/mark_batsu.png', width: '10%', height: '10%' %>
+        <div class="col-sm-2 offset-sm-5">
+          <%= image_tag '/mark_batsu.png', alt: "画像がありません", class: "img-fluid" %>
+        </div>
+        </div>
         <% end %>
         <div class="m-2">
         投稿者:<%= link_to item.user.name, user_path(item.user), class: "text-decoration-none" %>
