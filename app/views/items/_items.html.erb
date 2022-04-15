@@ -7,7 +7,7 @@
       </div>
       <div class="m-4">
         <% if item.image.present? %>
-          <%= image_tag item.image.url, width: '50%', height: '50%'%>
+          <%= image_tag item.image.url, width: '50%', height: '50%' %>
         <% else %>
           <%= image_tag '/mark_batsu.png', width: '10%', height: '10%' %>
         <% end %>
@@ -25,4 +25,8 @@
     <% end %>
   </div>
   <%== pagy_bootstrap_nav(@pagy) %>
+<% elsif current_user == @user %>
+  <h2>最初の投稿をしましょう！</h2>
+<% else %>
+  <h2>投稿はまだありません</h2>
 <% end %>
